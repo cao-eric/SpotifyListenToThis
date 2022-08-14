@@ -1,6 +1,9 @@
 # SpotifyListenToThis
 Creating a discovery weekly using r/listentothis
+
 Link to spotify playlist: https://open.spotify.com/playlist/6pKOD5vjD948Fcj9QEia9l?si=78dc511c37b94f81
+
+---------------------------------------------------------
 
 Used python requests package to gather top reddit posts on r/listentothis.
 I filter amount the song title and artist from the posts and pipe that to a spotify search by using the Spotipy API.
