@@ -90,11 +90,14 @@ def search_spotify_song(tracks_array, spotify_client_id, spotify_client_secret):
     song_id_array = []
 
     # Search for every song in the tracks array and add their id to the id_array
-    for tracks in tracks_array:
+        for tracks in tracks_array:
         if tracks != '':  # Skips any unsearchable songs
-            song_result = spotify.search(q=tracks, type='track')
-            song_id_array.append(
-                song_result['tracks']['items'][0]['id'])  # ID of the top track
+            try:
+                song_result = spotify.search(q=tracks, type='track')
+                song_id_array.append(
+                    song_result['tracks']['items'][0]['id'])  # ID of the top track
+            except:
+                print('Track: ' + tracks + ' cannot be found')
 
     return song_id_array
 
